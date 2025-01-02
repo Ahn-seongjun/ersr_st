@@ -36,8 +36,8 @@ st.markdown(f"- 차수 기준으로 이동평균선 조정 가능합니다.")
 st.markdown(f"- 국산/수입 탭을 통해 국산, 수입 변경 가능합니다.")
 st.markdown(f"- 하단의 브랜드 콤보박스를 통해 브랜드 설정 가능합니다.")
 
-number = st.number_input('MA 차수', 1, 36)
-
+#number = st.number_input('MA 차수', 1, 36)
+number = st.slider('MA',1,36,1,1)
 tab1, tab2 = st.tabs(['국산','수입'])
 with tab1:
     st.subheader('국산차량 말소 주행거리 이동평균선')
