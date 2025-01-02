@@ -21,34 +21,13 @@ ersr_na['MAX_AVG_TRVL'] = round(ersr_na['TRVL'] * ersr_na['USE_YEAR'], -3)
 trvl_na = ersr_na.pivot(index='EXTRACT_DE', columns='ORG_CAR_MAKER_KOR', values='MAX_AVG_TRVL')
 trvl_na = trvl_na.reset_index()
 trvl_na.dropna(axis=1, inplace=True)
-#trvl_na.columns[1:].tolist()
-def st_button(url, label):
-    st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">', unsafe_allow_html=True)
-    button_code = f'''<a href="{url}" target=_blank 
-    style = background-color: white;
-        border-color : #ffffff;
-        border-style:double;
-        text-align: center;> {label}</a>'''
-
-    return st.markdown(button_code, unsafe_allow_html=True)
 
 
-st.set_page_config(page_title= "summary", layout="wide", initial_sidebar_state="auto")
-
-
-
-
-
-cct_btn = """<input type="button" value="버튼" onClick="location.href='http://www.daum.net'"> """
+st.set_page_config(page_title= "[말소분석] 이동평균 그래프", layout="wide", initial_sidebar_state="auto")
 
 with st.sidebar:
     st.write("CARISYOU DATALAB")
     st.link_button("CarCharts Free","https://carcharts-free.carisyou.net/")
-    #st.markdown(cct_btn,unsafe_allow_html=True)
-    #CC = st.button("CarCharts Free")
-    #if CC:
-   #     webbrowser.open_new_tab("https://carcharts-free.carisyou.net/?utm_source=Carisyou&utm_medium=Banner&utm_campaign=P03_PC_Free&")
-        #webbrowser.open("https://carcharts-free.carisyou.net/?utm_source=Carisyou&utm_medium=Banner&utm_campaign=P03_PC_Free&", new=0, autoraise=True)
 
 st.markdown("## 말소 주행거리 분석 이동평균 자료")
 st.markdown(f"- 데이터 값 산출 근거 : 월별, 브랜드별 평균 주행거리 X 평균 사용년수")
@@ -106,10 +85,5 @@ text-align: center;
 
 
 st.markdown(footer,unsafe_allow_html=True)
-
-# import pandas as pd
-# df = pd.read_csv('C:/Users/clmns/PycharmProjects/pythonProject1/carregdb/data/2023년 누적 데이터.csv', index_col=0)
-# df5 = df[(df['EXTRACT_DE'] == 20231201) & (df['CL_HMMD_IMP_SE_NM'] == '국산')]
-# print(df5)
 
 # streamlit run summary.py
