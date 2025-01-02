@@ -39,14 +39,15 @@ st.set_page_config(page_title= "summary", layout="wide", initial_sidebar_state="
 
 
 
-
+cct_btn = """<input type="button" value="버튼" onClick="location.href='http://www.daum.net'"> """
 
 with st.sidebar:
     st.write("CARISYOU DATALAB")
-
-    CC = st.button("CarCharts Free")
-    if CC:
-        webbrowser.open_new_tab("https://carcharts-free.carisyou.net/?utm_source=Carisyou&utm_medium=Banner&utm_campaign=P03_PC_Free&")
+    st.link_button("CarCharts Free","https://carcharts-free.carisyou.net/")
+    #st.markdown(cct_btn,unsafe_allow_html=True)
+    #CC = st.button("CarCharts Free")
+    #if CC:
+   #     webbrowser.open_new_tab("https://carcharts-free.carisyou.net/?utm_source=Carisyou&utm_medium=Banner&utm_campaign=P03_PC_Free&")
         #webbrowser.open("https://carcharts-free.carisyou.net/?utm_source=Carisyou&utm_medium=Banner&utm_campaign=P03_PC_Free&", new=0, autoraise=True)
 
 st.markdown("## 말소 주행거리 분석 이동평균 자료")
