@@ -1,4 +1,4 @@
-
+import webbrowser
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -44,9 +44,9 @@ st.set_page_config(page_title= "summary", layout="wide", initial_sidebar_state="
 with st.sidebar:
     st.write("CARISYOU DATALAB")
 
-    CC = st.button("임시 비활성화입니다.")
-    #if CC:
-        #webbrowser.open_new_tab("https://carcharts-free.carisyou.net/?utm_source=Carisyou&utm_medium=Banner&utm_campaign=P03_PC_Free&")
+    CC = st.button("CarCharts Free")
+    if CC:
+        webbrowser.open_new_tab("https://carcharts-free.carisyou.net/?utm_source=Carisyou&utm_medium=Banner&utm_campaign=P03_PC_Free&")
         #webbrowser.open("https://carcharts-free.carisyou.net/?utm_source=Carisyou&utm_medium=Banner&utm_campaign=P03_PC_Free&", new=0, autoraise=True)
 
 st.markdown("## 말소 주행거리 분석 이동평균 자료")
